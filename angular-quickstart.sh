@@ -3,7 +3,19 @@ echo "-Diretório do projeto:"
 read project_folder
 
 mkdir $project_folder
+
+if [ "$?" = "1" ]; then
+	echo "Caminho inválido!"
+	exit 1
+fi
+
 cd    $project_folder
+
+if [ "$?" = "1" ]; then
+	echo "Invalid Path!"  
+	exit 1
+fi
+
 
 echo "/**
  * System configuration for Angular 2 samples
